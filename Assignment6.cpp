@@ -1,6 +1,6 @@
 /*
 Author - Name:Sejin Yoon ID:u1311019
-Date: May 2, 2023
+Date: May 3, 2023
 filename: Assignment6.cpp
 */
 
@@ -17,8 +17,9 @@ struct Vertex
 float Distance(const Vertex &v1 ,const Vertex &v2)
 {
   
-    
-    return sqrt(pow(v2.x - v1.x, 2) + pow(v2.y - v1.y, 2));
+    float dx = v1.x - v2.x;
+    float dy = v1.y - v2.y;
+    return sqrt(dx*dx + dy*dy);
 
 }
 
@@ -45,7 +46,8 @@ int main()
     std::cin>>v3.x>>v3.y;
 
     float area = triangleArea(v1, v2, v3);
-    cout << "The area of the triangle is: " << std::fixed << std::setprecision(2) << area << endl;
+
+    cout << "The area of the triangle is: " << fixed << setprecision(2) << area << endl;
 
     return 0;
 }
